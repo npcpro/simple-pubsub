@@ -84,7 +84,7 @@ export const subscribe = (req: Request, res: Response) => {
     if (!machine) {
         res.status(404).send('Machine not found');
     } else if (subscriber) {
-        res.status(403).send(`Machine ${machineId} already subscribed.`);
+        res.status(400).send(`Machine ${machineId} already subscribed.`);
     } else {
         pubSubService.subscribe(machineId);
         res.status(201).send(`Machine ${machineId} subscribed successfully.`);

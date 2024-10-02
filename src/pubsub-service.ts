@@ -96,16 +96,16 @@ export class StockLevelOkEvent implements IEvent {
   }
 
   type(): string {
-    return 'StockLevelOkEvent ';
+    return 'StockLevelOkEvent';
   }
 }
 
 
 export class StockWarningSubscriber implements ISubscriber {
   handle(event: IEvent): void {
-    if (event.type() === 'LowStockWarningEvent ') {
+    if (event.type() === 'LowStockWarningEvent') {
       console.log(`Low stock warning for machine ${event.machineId()}`);
-    } else if (event.type() === 'StockLevelOkEvent ') {
+    } else if (event.type() === 'StockLevelOkEvent') {
       console.log(`Stock level OK for machine ${event.machineId()}`);
     }
   }
