@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "4ecc488e-d7f4-4875-b277-964d21e9b70f",
+		"name": "Machine and PubSub API",
+		"description": "Postman collection for Machine and PubSub API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2105711"
+	},
+	"item": [
+		{
+			"name": "Create Machine",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": \"001\"\n}"
+				},
+				"url": {
+					"raw": "{url}/machine",
+					"host": [
+						"{url}"
+					],
+					"path": [
+						"machine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Machine",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/machine/001",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"machine",
+						"001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Machine by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/machine/001",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"machine",
+						"001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Machines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/machine",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"machine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Subscribers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{url}/pubsub",
+					"host": [
+						"{url}"
+					],
+					"path": [
+						"pubsub"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe Matchine",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"type\": \"publish\",\n  \"machineId\": \"001\"\n}"
+				},
+				"url": {
+					"raw": "{{ur}}/pubsub/subscribe",
+					"host": [
+						"{{ur}}"
+					],
+					"path": [
+						"pubsub",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish Event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"type\": \"sale\",\n    \"machineId\": \"001\",\n    \"qty\": 1\n}"
+				},
+				"url": {
+					"raw": "{{url}}/pubsub/publish",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"pubsub",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unsubscribe Matchine",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"machineId\": \"001\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/pubsub/unsubscribe",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"pubsub",
+						"unsubscribe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
